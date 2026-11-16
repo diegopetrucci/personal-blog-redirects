@@ -1,0 +1,34 @@
+/* Adaptations for the Jekyll version of the existing Less Reloaded design. */
+* { box-sizing: border-box; }
+body { overflow-wrap: anywhere; }
+.container { width: min(740px, calc(100% - 40px)); }
+.site-title { font-size: 30px; line-height: 1.3; }
+.site-navigation { clear: both; padding-top: 24px; display: flex; gap: 24px; font-size: 15px; }
+.post-date { color: #666; font-size: 14px; margin: 12px 0 28px; }
+article .the-content img { width: auto; max-width: 100%; height: auto; }
+.the-content figure { margin: 1.5em 0; }
+.the-content figcaption { font-size: .85em; color: #666; }
+.the-content pre { overflow-x: auto; white-space: pre; }
+.has-text-align-center { text-align: center; }
+.gallery { display: flex; flex-wrap: wrap; gap: 16px; }
+.gallery-item { max-width: 100%; }
+.post-navigation, .pagination { display: flex; justify-content: space-between; gap: 24px; margin: 40px 0; font-size: 15px; }
+.post-navigation a { max-width: 48%; }
+.post-navigation a[rel=next] { text-align: right; margin-left: auto; }
+.permalink { font-size: 14px; margin-top: 24px; }
+.site-footer { color: #666; padding: 24px 0 48px; font-size: 14px; }
+.archive-year { margin-bottom: 40px; }
+.archive-year h2 { margin-bottom: 20px; }
+.archive-year ul { list-style: none; padding: 0; }
+.archive-year li { display: flex; gap: 16px; justify-content: space-between; margin: 0 0 14px; }
+.archive-year time { color: #666; white-space: nowrap; font-size: 14px; }
+.skip-link { position: absolute; left: -10000px; }
+.skip-link:focus { left: 16px; top: 16px; background: white; padding: 12px; z-index: 10; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+@media (max-width: 600px) {
+  .container { width: calc(100% - 36px); }
+  .site-navigation { flex-wrap: wrap; gap: 20px; }
+  .post-navigation, .pagination { flex-wrap: wrap; }
+  .post .title { font-size: 30px; line-height: 1.25; }
+}
