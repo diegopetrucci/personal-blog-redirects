@@ -8,7 +8,9 @@ GitHub Pages serves these as HTML redirects (meta refresh with JavaScript preser
 
 The custom domain and DNS are configured only during the coordinated domain cutover.
 
-The Pages workflow refreshes both feeds from the live personal blog on each deployment and daily. GitHub can disable scheduled workflows after 60 days without repository activity, so after publishing a personal-blog post, enable and dispatch this workflow:
+The Pages workflow refreshes both feeds from the live personal blog on each deployment and daily. The main blog's deployment workflow also enables and dispatches this workflow automatically after a successful publish, then waits for completion. Its `source_sha` input identifies the blog deployment in the run title. This recovers from GitHub disabling schedules after long periods without repository activity.
+
+For manual recovery:
 
 ```sh
 gh workflow enable pages.yml --repo diegopetrucci/personal-blog-redirects

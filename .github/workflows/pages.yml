@@ -1,10 +1,16 @@
 name: Refresh feeds and deploy legacy blog
+run-name: ${{ inputs.source_sha && format('Refresh feeds after blog {0}', inputs.source_sha) || 'Refresh feeds and deploy legacy blog' }}
 on:
   push:
     branches: [main]
   schedule:
     - cron: '23 8 * * *'
   workflow_dispatch:
+    inputs:
+      source_sha:
+        description: Successfully deployed blog commit (for automatic refresh tracking)
+        required: false
+        type: string
 permissions:
   contents: read
   pages: write
